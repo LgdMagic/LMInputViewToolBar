@@ -15,6 +15,9 @@
 		9471D2851F29CF020086EAED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9471D2831F29CF020086EAED /* LaunchScreen.storyboard */; };
 		9471D2901F29CF020086EAED /* LMInputViewToolBarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9471D28F1F29CF020086EAED /* LMInputViewToolBarTests.m */; };
 		9471D29B1F29CF020086EAED /* LMInputViewToolBarUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9471D29A1F29CF020086EAED /* LMInputViewToolBarUITests.m */; };
+		9471D2AD1F29D3060086EAED /* HPGrowingTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9471D2AA1F29D3060086EAED /* HPGrowingTextView.m */; };
+		9471D2AE1F29D3060086EAED /* HPTextViewInternal.m in Sources */ = {isa = PBXBuildFile; fileRef = 9471D2AC1F29D3060086EAED /* HPTextViewInternal.m */; };
+		CAAB6F2227040B3634133422 /* libPods-LMInputViewToolBar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6297B44DD7255FA5BA7B4FD /* libPods-LMInputViewToolBar.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7894F4B2EEF1048411CFFF38 /* Pods-LMInputViewToolBar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LMInputViewToolBar.release.xcconfig"; path = "Pods/Target Support Files/Pods-LMInputViewToolBar/Pods-LMInputViewToolBar.release.xcconfig"; sourceTree = "<group>"; };
 		9471D2721F29CF020086EAED /* LMInputViewToolBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LMInputViewToolBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9471D2761F29CF020086EAED /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9471D2781F29CF020086EAED /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -51,6 +55,12 @@
 		9471D2961F29CF020086EAED /* LMInputViewToolBarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LMInputViewToolBarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9471D29A1F29CF020086EAED /* LMInputViewToolBarUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMInputViewToolBarUITests.m; sourceTree = "<group>"; };
 		9471D29C1F29CF020086EAED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9471D2A91F29D3060086EAED /* HPGrowingTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HPGrowingTextView.h; path = HPGrowingTextView/HPGrowingTextView.h; sourceTree = "<group>"; };
+		9471D2AA1F29D3060086EAED /* HPGrowingTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HPGrowingTextView.m; path = HPGrowingTextView/HPGrowingTextView.m; sourceTree = "<group>"; };
+		9471D2AB1F29D3060086EAED /* HPTextViewInternal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HPTextViewInternal.h; path = HPGrowingTextView/HPTextViewInternal.h; sourceTree = "<group>"; };
+		9471D2AC1F29D3060086EAED /* HPTextViewInternal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HPTextViewInternal.m; path = HPGrowingTextView/HPTextViewInternal.m; sourceTree = "<group>"; };
+		9AB17846ACDA9590DC891A38 /* Pods-LMInputViewToolBar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LMInputViewToolBar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LMInputViewToolBar/Pods-LMInputViewToolBar.debug.xcconfig"; sourceTree = "<group>"; };
+		D6297B44DD7255FA5BA7B4FD /* libPods-LMInputViewToolBar.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LMInputViewToolBar.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAAB6F2227040B3634133422 /* libPods-LMInputViewToolBar.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +89,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		75823A906DCD8EEB53A4EB77 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9AB17846ACDA9590DC891A38 /* Pods-LMInputViewToolBar.debug.xcconfig */,
+				7894F4B2EEF1048411CFFF38 /* Pods-LMInputViewToolBar.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		9471D2691F29CF020086EAED = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +105,8 @@
 				9471D28E1F29CF020086EAED /* LMInputViewToolBarTests */,
 				9471D2991F29CF020086EAED /* LMInputViewToolBarUITests */,
 				9471D2731F29CF020086EAED /* Products */,
+				75823A906DCD8EEB53A4EB77 /* Pods */,
+				9DBEAD984867528AEAE14D0E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +127,7 @@
 				9471D2791F29CF020086EAED /* AppDelegate.m */,
 				9471D27B1F29CF020086EAED /* ViewController.h */,
 				9471D27C1F29CF020086EAED /* ViewController.m */,
+				9471D2A81F29D2D20086EAED /* HPGrowingTextView */,
 				9471D27E1F29CF020086EAED /* Main.storyboard */,
 				9471D2811F29CF020086EAED /* Assets.xcassets */,
 				9471D2831F29CF020086EAED /* LaunchScreen.storyboard */,
@@ -140,6 +163,25 @@
 			path = LMInputViewToolBarUITests;
 			sourceTree = "<group>";
 		};
+		9471D2A81F29D2D20086EAED /* HPGrowingTextView */ = {
+			isa = PBXGroup;
+			children = (
+				9471D2A91F29D3060086EAED /* HPGrowingTextView.h */,
+				9471D2AA1F29D3060086EAED /* HPGrowingTextView.m */,
+				9471D2AB1F29D3060086EAED /* HPTextViewInternal.h */,
+				9471D2AC1F29D3060086EAED /* HPTextViewInternal.m */,
+			);
+			name = HPGrowingTextView;
+			sourceTree = "<group>";
+		};
+		9DBEAD984867528AEAE14D0E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D6297B44DD7255FA5BA7B4FD /* libPods-LMInputViewToolBar.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,9 +189,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9471D29F1F29CF020086EAED /* Build configuration list for PBXNativeTarget "LMInputViewToolBar" */;
 			buildPhases = (
+				15C8680136F35E3ADDC9263A /* [CP] Check Pods Manifest.lock */,
 				9471D26E1F29CF020086EAED /* Sources */,
 				9471D26F1F29CF020086EAED /* Frameworks */,
 				9471D2701F29CF020086EAED /* Resources */,
+				01DBDE7EA7D33EBE5F356D3B /* [CP] Embed Pods Frameworks */,
+				4FA2E231AA6262A9ECD3C90E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -268,6 +313,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		01DBDE7EA7D33EBE5F356D3B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LMInputViewToolBar/Pods-LMInputViewToolBar-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		15C8680136F35E3ADDC9263A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		4FA2E231AA6262A9ECD3C90E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LMInputViewToolBar/Pods-LMInputViewToolBar-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9471D26E1F29CF020086EAED /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -276,6 +369,8 @@
 				9471D27D1F29CF020086EAED /* ViewController.m in Sources */,
 				9471D27A1F29CF020086EAED /* AppDelegate.m in Sources */,
 				9471D2771F29CF020086EAED /* main.m in Sources */,
+				9471D2AD1F29D3060086EAED /* HPGrowingTextView.m in Sources */,
+				9471D2AE1F29D3060086EAED /* HPTextViewInternal.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,6 +517,7 @@
 		};
 		9471D2A01F29CF020086EAED /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9AB17846ACDA9590DC891A38 /* Pods-LMInputViewToolBar.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = LMInputViewToolBar/Info.plist;
@@ -433,6 +529,7 @@
 		};
 		9471D2A11F29CF020086EAED /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7894F4B2EEF1048411CFFF38 /* Pods-LMInputViewToolBar.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = LMInputViewToolBar/Info.plist;
