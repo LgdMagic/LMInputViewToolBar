@@ -17,6 +17,10 @@
 		9471D29B1F29CF020086EAED /* LMInputViewToolBarUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9471D29A1F29CF020086EAED /* LMInputViewToolBarUITests.m */; };
 		9471D2AD1F29D3060086EAED /* HPGrowingTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9471D2AA1F29D3060086EAED /* HPGrowingTextView.m */; };
 		9471D2AE1F29D3060086EAED /* HPTextViewInternal.m in Sources */ = {isa = PBXBuildFile; fileRef = 9471D2AC1F29D3060086EAED /* HPTextViewInternal.m */; };
+		9471D2B11F29DDEB0086EAED /* LMInputViewToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9471D2B01F29DDEB0086EAED /* LMInputViewToolBar.m */; };
+		9471D2B41F29DF170086EAED /* LMFaceImgManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9471D2B31F29DF170086EAED /* LMFaceImgManager.m */; };
+		9471D2B71F29E2420086EAED /* LMFaceImgEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 9471D2B61F29E2420086EAED /* LMFaceImgEntry.m */; };
+		9471D2BA1F29E4EF0086EAED /* LMFaceKeyBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9471D2B91F29E4EF0086EAED /* LMFaceKeyBoardView.m */; };
 		CAAB6F2227040B3634133422 /* libPods-LMInputViewToolBar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6297B44DD7255FA5BA7B4FD /* libPods-LMInputViewToolBar.a */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +63,14 @@
 		9471D2AA1F29D3060086EAED /* HPGrowingTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HPGrowingTextView.m; path = HPGrowingTextView/HPGrowingTextView.m; sourceTree = "<group>"; };
 		9471D2AB1F29D3060086EAED /* HPTextViewInternal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HPTextViewInternal.h; path = HPGrowingTextView/HPTextViewInternal.h; sourceTree = "<group>"; };
 		9471D2AC1F29D3060086EAED /* HPTextViewInternal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HPTextViewInternal.m; path = HPGrowingTextView/HPTextViewInternal.m; sourceTree = "<group>"; };
+		9471D2AF1F29DDEB0086EAED /* LMInputViewToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMInputViewToolBar.h; sourceTree = "<group>"; };
+		9471D2B01F29DDEB0086EAED /* LMInputViewToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMInputViewToolBar.m; sourceTree = "<group>"; };
+		9471D2B21F29DF170086EAED /* LMFaceImgManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMFaceImgManager.h; sourceTree = "<group>"; };
+		9471D2B31F29DF170086EAED /* LMFaceImgManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMFaceImgManager.m; sourceTree = "<group>"; };
+		9471D2B51F29E2420086EAED /* LMFaceImgEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMFaceImgEntry.h; sourceTree = "<group>"; };
+		9471D2B61F29E2420086EAED /* LMFaceImgEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMFaceImgEntry.m; sourceTree = "<group>"; };
+		9471D2B81F29E4EF0086EAED /* LMFaceKeyBoardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMFaceKeyBoardView.h; sourceTree = "<group>"; };
+		9471D2B91F29E4EF0086EAED /* LMFaceKeyBoardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMFaceKeyBoardView.m; sourceTree = "<group>"; };
 		9AB17846ACDA9590DC891A38 /* Pods-LMInputViewToolBar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LMInputViewToolBar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LMInputViewToolBar/Pods-LMInputViewToolBar.debug.xcconfig"; sourceTree = "<group>"; };
 		D6297B44DD7255FA5BA7B4FD /* libPods-LMInputViewToolBar.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LMInputViewToolBar.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -127,6 +139,14 @@
 				9471D2791F29CF020086EAED /* AppDelegate.m */,
 				9471D27B1F29CF020086EAED /* ViewController.h */,
 				9471D27C1F29CF020086EAED /* ViewController.m */,
+				9471D2AF1F29DDEB0086EAED /* LMInputViewToolBar.h */,
+				9471D2B01F29DDEB0086EAED /* LMInputViewToolBar.m */,
+				9471D2B21F29DF170086EAED /* LMFaceImgManager.h */,
+				9471D2B31F29DF170086EAED /* LMFaceImgManager.m */,
+				9471D2B51F29E2420086EAED /* LMFaceImgEntry.h */,
+				9471D2B61F29E2420086EAED /* LMFaceImgEntry.m */,
+				9471D2B81F29E4EF0086EAED /* LMFaceKeyBoardView.h */,
+				9471D2B91F29E4EF0086EAED /* LMFaceKeyBoardView.m */,
 				9471D2A81F29D2D20086EAED /* HPGrowingTextView */,
 				9471D27E1F29CF020086EAED /* Main.storyboard */,
 				9471D2811F29CF020086EAED /* Assets.xcassets */,
@@ -366,10 +386,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9471D2B11F29DDEB0086EAED /* LMInputViewToolBar.m in Sources */,
+				9471D2BA1F29E4EF0086EAED /* LMFaceKeyBoardView.m in Sources */,
 				9471D27D1F29CF020086EAED /* ViewController.m in Sources */,
+				9471D2B71F29E2420086EAED /* LMFaceImgEntry.m in Sources */,
 				9471D27A1F29CF020086EAED /* AppDelegate.m in Sources */,
 				9471D2771F29CF020086EAED /* main.m in Sources */,
 				9471D2AD1F29D3060086EAED /* HPGrowingTextView.m in Sources */,
+				9471D2B41F29DF170086EAED /* LMFaceImgManager.m in Sources */,
 				9471D2AE1F29D3060086EAED /* HPTextViewInternal.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -604,6 +628,7 @@
 				9471D2A11F29CF020086EAED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9471D2A21F29CF020086EAED /* Build configuration list for PBXNativeTarget "LMInputViewToolBarTests" */ = {
 			isa = XCConfigurationList;
@@ -612,6 +637,7 @@
 				9471D2A41F29CF020086EAED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9471D2A51F29CF020086EAED /* Build configuration list for PBXNativeTarget "LMInputViewToolBarUITests" */ = {
 			isa = XCConfigurationList;
@@ -620,6 +646,7 @@
 				9471D2A71F29CF020086EAED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
