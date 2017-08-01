@@ -21,6 +21,7 @@
 		9471D2B41F29DF170086EAED /* LMFaceImgManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9471D2B31F29DF170086EAED /* LMFaceImgManager.m */; };
 		9471D2B71F29E2420086EAED /* LMFaceImgEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 9471D2B61F29E2420086EAED /* LMFaceImgEntry.m */; };
 		9471D2BA1F29E4EF0086EAED /* LMFaceKeyBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9471D2B91F29E4EF0086EAED /* LMFaceKeyBoardView.m */; };
+		9471D2BD1F30585C0086EAED /* UIColor+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 9471D2BC1F30585C0086EAED /* UIColor+Addition.m */; };
 		CAAB6F2227040B3634133422 /* libPods-LMInputViewToolBar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6297B44DD7255FA5BA7B4FD /* libPods-LMInputViewToolBar.a */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +72,8 @@
 		9471D2B61F29E2420086EAED /* LMFaceImgEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMFaceImgEntry.m; sourceTree = "<group>"; };
 		9471D2B81F29E4EF0086EAED /* LMFaceKeyBoardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMFaceKeyBoardView.h; sourceTree = "<group>"; };
 		9471D2B91F29E4EF0086EAED /* LMFaceKeyBoardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMFaceKeyBoardView.m; sourceTree = "<group>"; };
+		9471D2BB1F30585B0086EAED /* UIColor+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Addition.h"; sourceTree = "<group>"; };
+		9471D2BC1F30585C0086EAED /* UIColor+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Addition.m"; sourceTree = "<group>"; };
 		9AB17846ACDA9590DC891A38 /* Pods-LMInputViewToolBar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LMInputViewToolBar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LMInputViewToolBar/Pods-LMInputViewToolBar.debug.xcconfig"; sourceTree = "<group>"; };
 		D6297B44DD7255FA5BA7B4FD /* libPods-LMInputViewToolBar.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LMInputViewToolBar.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -147,6 +150,8 @@
 				9471D2B61F29E2420086EAED /* LMFaceImgEntry.m */,
 				9471D2B81F29E4EF0086EAED /* LMFaceKeyBoardView.h */,
 				9471D2B91F29E4EF0086EAED /* LMFaceKeyBoardView.m */,
+				9471D2BB1F30585B0086EAED /* UIColor+Addition.h */,
+				9471D2BC1F30585C0086EAED /* UIColor+Addition.m */,
 				9471D2A81F29D2D20086EAED /* HPGrowingTextView */,
 				9471D27E1F29CF020086EAED /* Main.storyboard */,
 				9471D2811F29CF020086EAED /* Assets.xcassets */,
@@ -395,6 +400,7 @@
 				9471D2AD1F29D3060086EAED /* HPGrowingTextView.m in Sources */,
 				9471D2B41F29DF170086EAED /* LMFaceImgManager.m in Sources */,
 				9471D2AE1F29D3060086EAED /* HPTextViewInternal.m in Sources */,
+				9471D2BD1F30585C0086EAED /* UIColor+Addition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
