@@ -96,7 +96,6 @@ static LMInputViewToolBar *_shareToolbar;
     _inputTextView.left = 15;
     _inputTextView.centerY = _bottomView.height / 2.f;
     
-//    [[UIApplication sharedApplication].delegate.window.rootViewController.view addSubview:_bottomView];
     [[self getCurrentVC].view addSubview:_bottomView];
     
 }
@@ -119,17 +118,16 @@ static LMInputViewToolBar *_shareToolbar;
     _numCountLabel.bottom = _faceEntry.top-10;
 }
 
-//-(BOOL)growingTextView:(HPGrowingTextView *)growingTextView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
-//{
-//    return YES;
-//}
-
-- (BOOL)growingTextViewShouldReturn:(HPGrowingTextView *)growingTextView
+-(BOOL)growingTextView:(HPGrowingTextView *)growingTextView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
 {
-    if (growingTextView.internalTextView.text.length > 0) {
-        [self faceKeyBoardDidClickedSend];
+    if ([text isEqualToString:@"\n"]) {
+        if (growingTextView.internalTextView.text.length > 0) {
+            [self faceKeyBoardDidClickedSend];
+        }
+        return NO;
     }
     return YES;
+
 }
 
 - (void)growingTextViewDidChange:(HPGrowingTextView *)growingTextView
@@ -173,13 +171,13 @@ static LMInputViewToolBar *_shareToolbar;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
 }
 
--(void)keyboardWillShow:(NSNotification *)note
+-(void)keyboardWillShow:(NSNotification *)noti
 {
     [[UIApplication sharedApplication].delegate.window bringSubviewToFront:_bottomView];
     CGRect keyboardBounds;
-    [[note.userInfo valueForKey:UIKeyboardFrameEndUserInfoKey] getValue: &keyboardBounds];
-    NSNumber *duration = [note.userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey];
-    NSNumber *curve = [note.userInfo objectForKey:UIKeyboardAnimationCurveUserInfoKey];
+    [[noti.userInfo valueForKey:UIKeyboardFrameEndUserInfoKey] getValue: &keyboardBounds];
+    NSNumber *duration = [noti.userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey];
+    NSNumber *curve = [noti.userInfo objectForKey:UIKeyboardAnimationCurveUserInfoKey];
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationBeginsFromCurrentState:YES];
     [UIView setAnimationDuration:[duration doubleValue]];
@@ -192,18 +190,25 @@ static LMInputViewToolBar *_shareToolbar;
     [UIView commitAnimations];
 }
 
--(void)keyboardWillHide:(NSNotification *)note
+-(void)keyboardWillHide:(NSNotification *)noti
 {
-    NSNumber *duration = [note.userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey];
-    NSNumber *curve = [note.userInfo objectForKey:UIKeyboardAnimationCurveUserInfoKey];
+    NSNumber *duration = [noti.userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey];
+    NSNumber *curve = [noti.userInfo objectForKey:UIKeyboardAnimationCurveUserInfoKey];
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationBeginsFromCurrentState:YES];
     [UIView setAnimationDuration:[duration doubleValue]];
     [UIView setAnimationCurve:[curve intValue]];
     
     _bottomView.top = SCREEN_HEIGHT - BOTTOM_VIEW_HEIGHT;
-
+    _faceEntry.image = [UIImage imageNamed:@"ip_brow"];
     [UIView commitAnimations];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.inputTextView.internalTextView  performSelector:@selector(setInputView:) withObject:nil];
+        [self.inputTextView.internalTextView  performSelector:@selector(reloadInputViews) withObject:nil];
+    });
+
+    
 }
 
 //获取当前屏幕显示的viewcontroller
