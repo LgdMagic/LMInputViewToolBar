@@ -7,19 +7,18 @@
 * 开发语言：Objective-C
 
 ### 第三方SDK
-
+```
 YYCategories
 YYText
 HPGrowingTextView
-
+```
 ### 主要文件
-
-
+```
 LMInputViewToolBar
 LMFaceImgManager
 LMFaceImgEntry
 LMFaceKeyBoardView
-
+```
 ### 使用方式
 ```
 [[LMInputViewToolBar shareToolBar] showInputView];
