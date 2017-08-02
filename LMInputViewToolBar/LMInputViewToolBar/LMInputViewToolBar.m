@@ -72,6 +72,7 @@ static LMInputViewToolBar *_shareToolbar;
     _inputTextView.placeholderColor = [UIColor colorFromHexString:@"c8c8c8"];
     _inputTextView.placeholder = @"请输入内容";
     _inputTextView.returnKeyType = UIReturnKeySend;
+    _inputTextView.enablesReturnKeyAutomatically = YES;
     [_bottomView addSubview:_inputTextView];
     
     _faceEntry = [[LMFaceImgEntry alloc] initWithFrame:CGRectMake(0, 0, 28, 28)];
@@ -123,28 +124,38 @@ static LMInputViewToolBar *_shareToolbar;
     _numCountLabel.bottom = _faceEntry.top-10;
 }
 
--(BOOL)growingTextView:(HPGrowingTextView *)growingTextView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
+//-(BOOL)growingTextView:(HPGrowingTextView *)growingTextView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
+//{
+//    return YES;
+//}
+
+- (BOOL)growingTextViewShouldReturn:(HPGrowingTextView *)growingTextView
 {
+    if (growingTextView.internalTextView.text.length > 0) {
+        [self faceKeyBoardDidClickedSend];
+    }
     return YES;
 }
 
-- (void)growingTextViewDidChange:(HPGrowingTextView *)growingTextView{
-    
+- (void)growingTextViewDidChange:(HPGrowingTextView *)growingTextView
+{
   [[NSNotificationCenter defaultCenter] postNotificationName:@"LMFaceDidChange" object:growingTextView.text];
 }
 
-- (YYTextView *)targetViewForfaceImgEntry{
+- (YYTextView *)targetViewForfaceImgEntry
+{
     return self.inputTextView.internalTextView;
 }
 
 #pragma faceKeyBoard delegate
-- (void)faceKeyBoardDidClickedSend{
-    
+- (void)faceKeyBoardDidClickedSend
+{
     self.inputTextView.internalTextView.text = @"";
     [self.inputTextView resignFirstResponder];
 }
 
-- (void)faceKeyBoardDidClickedFaceWithFaceName:(NSString *)faceName{
+- (void)faceKeyBoardDidClickedFaceWithFaceName:(NSString *)faceName
+{
     NSMutableString *text = [NSMutableString stringWithString:self.inputTextView.internalTextView.text];
     NSRange seletR = self.inputTextView.internalTextView.selectedRange;
     [text insertString:faceName atIndex:seletR.location];
@@ -152,7 +163,8 @@ static LMInputViewToolBar *_shareToolbar;
     [self.inputTextView.internalTextView setSelectedRange:NSMakeRange(seletR.location+faceName.length, 0)];
 }
 
-- (void)faceKeyBoardDidClickedDelete{
+- (void)faceKeyBoardDidClickedDelete
+{
     if ([self.inputTextView.internalTextView respondsToSelector:@selector(deleteBackward)]) {
         [self.inputTextView.internalTextView performSelector:@selector(deleteBackward) withObject:nil];
     }
