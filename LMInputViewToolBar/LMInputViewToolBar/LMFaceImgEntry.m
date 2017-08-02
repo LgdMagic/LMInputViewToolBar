@@ -12,7 +12,6 @@
 #import "LMFaceKeyBoardView.h"
 
 @interface LMFaceImgEntry ()
-@property (nonatomic, assign) BOOL changeToNormalInputView;//是否切换到文字键盘
 @property (nonatomic, weak) YYTextView *targetView;
 @property (nonatomic, strong) NSRegularExpression *regex;
 @property (nonatomic, strong) LMFaceKeyBoardView *keyBoardView;

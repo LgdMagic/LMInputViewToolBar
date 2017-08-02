@@ -16,5 +16,5 @@
 @property(nonatomic ,strong) UIView *bottomView;
 @property(nonatomic ,strong) LMFaceImgEntry *faceEntry;
 + (LMInputViewToolBar *)shareToolBar;
-
+- (void)showInputView;
 @end

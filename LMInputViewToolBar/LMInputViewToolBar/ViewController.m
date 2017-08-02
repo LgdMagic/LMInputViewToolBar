@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    LMInputViewToolBar *inputToolBar = [LMInputViewToolBar shareToolBar];
+    [[LMInputViewToolBar shareToolBar] showInputView];
 }
 
 - (IBAction)hideInputView:(id)sender

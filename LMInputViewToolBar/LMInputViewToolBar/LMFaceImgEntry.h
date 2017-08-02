@@ -39,5 +39,6 @@ typedef NS_ENUM(NSInteger, LMFaceEntryReturnType) {
 
 @property (nonatomic, weak) id<LMFaceImgEntryDelegate> delegate;
 @property (nonatomic, assign) LMFaceEntryReturnType returnType;
+@property (nonatomic, assign) BOOL changeToNormalInputView;//是否切换到文字键盘
 
 @end

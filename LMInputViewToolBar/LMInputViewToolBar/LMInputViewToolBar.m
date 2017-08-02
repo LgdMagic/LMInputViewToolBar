@@ -96,8 +96,11 @@ static LMInputViewToolBar *_shareToolbar;
     _inputTextView.left = 15;
     _inputTextView.centerY = _bottomView.height / 2.f;
     
+}
+
+- (void)showInputView
+{
     [[self getCurrentVC].view addSubview:_bottomView];
-    
 }
 
 #pragma mark -
@@ -206,6 +209,7 @@ static LMInputViewToolBar *_shareToolbar;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.inputTextView.internalTextView  performSelector:@selector(setInputView:) withObject:nil];
         [self.inputTextView.internalTextView  performSelector:@selector(reloadInputViews) withObject:nil];
+        _faceEntry.changeToNormalInputView = !_faceEntry.changeToNormalInputView;
     });
 
     
