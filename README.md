@@ -23,3 +23,5 @@ LMFaceKeyBoardView
 ```
 [[LMInputViewToolBar shareToolBar] showInputView];
 ```
+
+![Alt Text](https://github.com/DeftMKJ/mutipleFormVC/blob/master/888.gif)
