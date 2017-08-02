@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -22,22 +22,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Xr-9o-aDd">
-                                <rect key="frame" x="87" y="139" width="200" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="2Xr-9o-aDd" secondAttribute="height" multiplier="5:1" id="46G-f8-6eK"/>
-                                    <constraint firstAttribute="width" constant="200" id="AFr-nw-qtv"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="IIH-40-8BY"/>
-                                    <constraint firstAttribute="height" constant="40" id="mhT-wU-O9F"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="wvF-ES-87x"/>
-                                </constraints>
-                                <state key="normal" title="呼起键盘"/>
-                                <connections>
-                                    <action selector="showInputView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="o4g-A9-qfM"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kT3-o3-XOk">
-                                <rect key="frame" x="87" y="227" width="200" height="40"/>
+                                <rect key="frame" x="87" y="149" width="200" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="kT3-o3-XOk" secondAttribute="height" multiplier="5:1" id="FVl-A6-Xsd"/>
                                     <constraint firstAttribute="width" constant="200" id="IG6-0i-v2N"/>
@@ -53,11 +39,9 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="kT3-o3-XOk" firstAttribute="leading" secondItem="2Xr-9o-aDd" secondAttribute="leading" id="Nki-dW-QiQ"/>
-                            <constraint firstItem="2Xr-9o-aDd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="119" id="bRG-RG-8MV"/>
-                            <constraint firstItem="2Xr-9o-aDd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="f2I-rP-tWQ"/>
+                            <constraint firstItem="kT3-o3-XOk" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="129" id="5jp-om-Yl1"/>
+                            <constraint firstItem="kT3-o3-XOk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OlR-3J-73u"/>
                             <constraint firstItem="kT3-o3-XOk" firstAttribute="width" secondItem="kT3-o3-XOk" secondAttribute="height" multiplier="5:1" id="hMi-LO-IhC"/>
-                            <constraint firstItem="kT3-o3-XOk" firstAttribute="top" secondItem="2Xr-9o-aDd" secondAttribute="bottom" constant="48" id="jFh-7N-ngZ"/>
                         </constraints>
                     </view>
                 </viewController>

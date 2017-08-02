@@ -80,9 +80,6 @@
     if ([self.delegate respondsToSelector:@selector(targetViewForfaceImgEntry)]) {
         _targetView = [self.delegate targetViewForfaceImgEntry];
     }
-    if ([self.delegate respondsToSelector:@selector(writeText)]) {
-        [self.delegate writeText];
-    }
     NSRange seletR = self.targetView.selectedRange;
     [super touchesEnded:touches withEvent:event];
     if (_targetView&&[_targetView respondsToSelector:@selector(setInputView:)]&&[_targetView respondsToSelector:@selector(reloadInputViews)]) {

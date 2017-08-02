@@ -28,7 +28,6 @@ typedef NS_ENUM(NSInteger, LMFaceEntryReturnType) {
 
 - (YYTextView *)targetViewForfaceImgEntry;
 - (void)faceKeyBoardDidClickedSend;
-- (void)writeText;
 
 @optional
 - (void)faceKeyBoardDidClickedDelete;

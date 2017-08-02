@@ -31,7 +31,7 @@ static LMInputViewToolBar *_shareToolbar;
 {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        _shareToolbar = [[LMInputViewToolBar alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 49)];
+        _shareToolbar = [[LMInputViewToolBar alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, BOTTOM_VIEW_HEIGHT)];
     });
     return _shareToolbar;
 }
@@ -39,6 +39,7 @@ static LMInputViewToolBar *_shareToolbar;
 - (instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
         [self addBottmBar];
+        [self addKeyBoardNotification];
     }
     return self;
 }
@@ -46,14 +47,14 @@ static LMInputViewToolBar *_shareToolbar;
 -(void)addBottmBar
 {
     _bottomView = [[UIView alloc]init];
-    _bottomView.frame = CGRectMake(0, SCREEN_HEIGHT, SCREEN_WIDTH, BOTTOM_VIEW_HEIGHT);
+    _bottomView.frame = CGRectMake(0, SCREEN_HEIGHT - BOTTOM_VIEW_HEIGHT, SCREEN_WIDTH, BOTTOM_VIEW_HEIGHT);
     _bottomView.backgroundColor = [UIColor colorFromHexString:@"efeff4"];
     
     UIView *topLine = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 0.5)];
     topLine.backgroundColor = [UIColor colorFromHexString:@"d8d8dc"];
     [_bottomView addSubview:topLine];
     
-    _inputTextView = [[HPGrowingTextView alloc]init];
+    _inputTextView = [[HPGrowingTextView alloc] init];
     _inputTextView.frame = CGRectMake(15, 8, SCREEN_WIDTH - 60, 37);
     _inputTextView.isScrollable = NO;
     _inputTextView.contentInset = UIEdgeInsetsMake(4, 2, 0, 2);
@@ -91,19 +92,13 @@ static LMInputViewToolBar *_shareToolbar;
     _numCountLabel.hidden = YES;
     [_bottomView addSubview:_numCountLabel];
     
-    _inputTextView.width = SCREEN_WIDTH-_faceEntry.width-45;
+    _inputTextView.width = SCREEN_WIDTH-_faceEntry.width - 45;
     _inputTextView.left = 15;
-    _inputTextView.centerY = _bottomView.height/2.f;
+    _inputTextView.centerY = _bottomView.height / 2.f;
     
-    [[UIApplication sharedApplication].delegate.window addSubview:_bottomView];
+//    [[UIApplication sharedApplication].delegate.window.rootViewController.view addSubview:_bottomView];
+    [[self getCurrentVC].view addSubview:_bottomView];
     
-}
-
-- (void)setNeedShowInputView:(BOOL)needShowInputView{
-    _needShowInputView = needShowInputView;
-    if (needShowInputView) {
-        [self addKeyBoardNotification];
-    }
 }
 
 #pragma mark -
@@ -151,7 +146,6 @@ static LMInputViewToolBar *_shareToolbar;
 - (void)faceKeyBoardDidClickedSend
 {
     self.inputTextView.internalTextView.text = @"";
-    [self.inputTextView resignFirstResponder];
 }
 
 - (void)faceKeyBoardDidClickedFaceWithFaceName:(NSString *)faceName
@@ -190,7 +184,6 @@ static LMInputViewToolBar *_shareToolbar;
     [UIView setAnimationBeginsFromCurrentState:YES];
     [UIView setAnimationDuration:[duration doubleValue]];
     [UIView setAnimationCurve:[curve intValue]];
-    _bottomView.hidden = !_needShowInputView;
     if (![_inputTextView.internalTextView isFirstResponder]) {
         [_inputTextView.internalTextView becomeFirstResponder];
     }
@@ -208,13 +201,44 @@ static LMInputViewToolBar *_shareToolbar;
     [UIView setAnimationDuration:[duration doubleValue]];
     [UIView setAnimationCurve:[curve intValue]];
     
-    _bottomView.hidden = YES;
-    _bottomView.top = SCREEN_HEIGHT;
-    _needShowInputView = NO;
+    _bottomView.top = SCREEN_HEIGHT - BOTTOM_VIEW_HEIGHT;
 
     [UIView commitAnimations];
 }
 
+//获取当前屏幕显示的viewcontroller
+- (UIViewController *)getCurrentVC
+{
+    UIViewController *rootViewController = [UIApplication sharedApplication].delegate.window.rootViewController;
+    
+    UIViewController *currentVC = [self getCurrentVCFrom:rootViewController];
+    
+    return currentVC;
+}
+
+- (UIViewController *)getCurrentVCFrom:(UIViewController *)rootVC
+{
+    UIViewController *currentVC;
+    
+    if ([rootVC presentedViewController]) {
+        // 视图是被presented出来的
+        rootVC = [rootVC presentedViewController];
+    }
+    if ([rootVC isKindOfClass:[UITabBarController class]]) {
+        // 根视图为UITabBarController
+        currentVC = [self getCurrentVCFrom:[(UITabBarController *)rootVC selectedViewController]];
+    
+    } else if ([rootVC isKindOfClass:[UINavigationController class]]){
+        // 根视图为UINavigationController
+        currentVC = [self getCurrentVCFrom:[(UINavigationController *)rootVC visibleViewController]];
+        
+    } else {
+        // 根视图为非导航类
+        currentVC = rootVC;
+    }
+    
+    return currentVC;
+}
 
 
 @end

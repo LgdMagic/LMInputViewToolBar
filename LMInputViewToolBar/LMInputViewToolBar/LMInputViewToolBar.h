@@ -15,7 +15,6 @@
 @property(nonatomic ,strong) HPGrowingTextView *inputTextView;
 @property(nonatomic ,strong) UIView *bottomView;
 @property(nonatomic ,strong) LMFaceImgEntry *faceEntry;
-@property (nonatomic, assign) BOOL needShowInputView;
 + (LMInputViewToolBar *)shareToolBar;
 
 @end

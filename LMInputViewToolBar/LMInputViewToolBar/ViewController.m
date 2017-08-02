@@ -17,32 +17,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-}
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (IBAction)showInputView:(id)sender
-{
-    if ([[LMInputViewToolBar shareToolBar].inputTextView.internalTextView isFirstResponder]) {
-        [[LMInputViewToolBar shareToolBar].inputTextView.internalTextView resignFirstResponder];
-        return;
-    }
-
     LMInputViewToolBar *inputToolBar = [LMInputViewToolBar shareToolBar];
-    inputToolBar.needShowInputView = YES;
-    [inputToolBar.inputTextView becomeFirstResponder];
-
 }
 
 - (IBAction)hideInputView:(id)sender
 {
     [LMInputViewToolBar shareToolBar].inputTextView.internalTextView.text = @"";
   
-    [[UIApplication sharedApplication].delegate.window endEditing:YES];
+    [self.view endEditing:YES];
     
 }
 
