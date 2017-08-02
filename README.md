@@ -24,4 +24,5 @@ LMFaceKeyBoardView
 [[LMInputViewToolBar shareToolBar] showInputView];
 ```
 
-![Alt Text](https://github.com/DeftMKJ/mutipleFormVC/blob/master/888.gif)
+![Alt Text](https://github.com/LgdMagic/LMInputViewToolBar/blob/master/1.png)
+![Alt Text](https://github.com/LgdMagic/LMInputViewToolBar/blob/master/2.png)
