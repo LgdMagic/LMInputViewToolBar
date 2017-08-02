@@ -10,6 +10,7 @@
 #import "LMFaceImgManager.h"
 #import <YYCategories.h>
 #import "UIView+YYAdd.h"
+#import "UIColor+Addition.h"
 
 static ushort const rowNum = 4;
 
@@ -18,17 +19,17 @@ static ushort const rowNum = 4;
     CGFloat _FKBViewH;
 }
 
-@property (nonatomic, strong)NSArray * arrFace;
-@property (nonatomic, strong)UIScrollView * scFace;
-@property (nonatomic, strong)FaceKeyBoardBlock block;
-@property (nonatomic, strong)FaceKeyBoardSendBlock sendBlock;
-@property (nonatomic, strong)FaceKeyBoardDeleteBlock deleteBlock;
-@property (nonatomic, strong)UIView *bottomView;
-@property (nonatomic, strong)UIButton *sendBtn;
-@property (nonatomic, strong)UIPageControl *pageC;
+@property (nonatomic, strong) NSArray * arrFace;
+@property (nonatomic, strong) UIScrollView * scFace;
+@property (nonatomic, strong) FaceKeyBoardBlock block;
+@property (nonatomic, strong) FaceKeyBoardSendBlock sendBlock;
+@property (nonatomic, strong) FaceKeyBoardDeleteBlock deleteBlock;
+@property (nonatomic, strong) UIView *bottomView;
+@property (nonatomic, strong) UIButton *sendBtn;
+@property (nonatomic, strong) UIPageControl *pageC;
 
-@property (nonatomic, strong)LMFaceImgManager *FManager;
-@property (nonatomic, copy)NSArray * faceDescribeArr;
+@property (nonatomic, strong) LMFaceImgManager *FManager;
+@property (nonatomic, copy) NSArray * faceDescribeArr;
 @end
 
 @implementation LMFaceKeyBoardView
@@ -39,6 +40,7 @@ static ushort const rowNum = 4;
     if (self) {
         [self setViewFrame];
         [self loadKeyBoardView];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textDidChanged:) name:@"LMFaceDidChange" object:nil];
     }
     return self;
 }
@@ -70,29 +72,6 @@ static ushort const rowNum = 4;
 {
     //初始化manager
     self.FManager = [LMFaceImgManager share];
-    //获取数据
-    [self.FManager fetchAllFaces];
-    [self setFaceFrame];
-}
-
-- (void)fetchRecentlyFaces
-{
-    //更新manager
-    [self.FManager fetchRecentlyFaces];
-    self.arrFace = self.FManager.RecentlyFaces;
-    [self setFaceFrame];
-}
-
-- (void)fetchAllFaces
-{
-    self.arrFace = self.FManager.AllFaces;
-    //设置表情scrollView
-    [self setFaceFrame];
-}
-
-- (void)fetchBigFaces
-{
-    self.arrFace = nil;
     [self setFaceFrame];
 }
 
@@ -272,21 +251,20 @@ static ushort const rowNum = 4;
 
 - (void)tapSendBtn
 {
-    self.sendBlock?self.sendBlock():nil;
+    self.sendBlock ? self.sendBlock() : nil;
 }
 
 - (void)textDidChanged:(NSNotification *)noti{
     NSString *text = noti.object;
     if ([text isKindOfClass:NSString.class]) {
         if (text.length==0) {
-            _sendBtn.backgroundColor = [UIColor lightGrayColor];
+            _sendBtn.backgroundColor = [UIColor colorFromHexString:@"c8c8c8"];
         }else{
-            _sendBtn.backgroundColor = [UIColor blueColor];
+            _sendBtn.backgroundColor = [UIColor colorFromHexString:@"#00bbff"];
         }
     }
     
 }
-
 
 //点击表情接口
 - (void)setFaceKeyBoardBlock:(FaceKeyBoardBlock)block

@@ -20,25 +20,10 @@
 {
     self = [super init];
     if (self) {
-        [self fetchAllFaces];
+        
     }
     return self;
 }
-
-- (void)fetchAllFaces
-{
-    NSString * path = [[NSBundle mainBundle] pathForResource:@"emoticons" ofType:@"plist"];
-    NSArray * arrFace = [NSArray arrayWithContentsOfFile:path];
-    _AllFaces = arrFace;
-}
-
-- (void)fetchRecentlyFaces
-{
-    NSUserDefaults * defauls = [NSUserDefaults standardUserDefaults];
-    NSArray * arrFace = [defauls objectForKey:@"RecentlyFaces"];
-    _RecentlyFaces = arrFace;
-}
-
 
 +(instancetype)share
 {

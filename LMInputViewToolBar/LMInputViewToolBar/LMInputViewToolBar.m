@@ -12,7 +12,7 @@
 #import <YYCategories.h>
 
 #define SCREEN_WIDTH   [UIScreen mainScreen].applicationFrame.size.width
-#define SCREEN_HEIGHT  [UIScreen mainScreen].applicationFrame.size.height
+#define SCREEN_HEIGHT  [UIScreen mainScreen].bounds.size.height
 #define BOTTOM_VIEW_HEIGHT 49
 #define NAVI_VIEW_HEIGHT 64
 
@@ -31,8 +31,7 @@ static LMInputViewToolBar *_shareToolbar;
 {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        _shareToolbar = [[LMInputViewToolBar alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH
-, 49)];
+        _shareToolbar = [[LMInputViewToolBar alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 49)];
     });
     return _shareToolbar;
 }
@@ -130,8 +129,8 @@ static LMInputViewToolBar *_shareToolbar;
 }
 
 - (void)growingTextViewDidChange:(HPGrowingTextView *)growingTextView{
-  
- 
+    
+  [[NSNotificationCenter defaultCenter] postNotificationName:@"LMFaceDidChange" object:growingTextView.text];
 }
 
 - (YYTextView *)targetViewForfaceImgEntry{
@@ -184,7 +183,7 @@ static LMInputViewToolBar *_shareToolbar;
         [_inputTextView.internalTextView becomeFirstResponder];
     }
     
-    _bottomView.bottom = SCREEN_HEIGHT  - keyboardBounds.size.height;
+    _bottomView.bottom = SCREEN_HEIGHT - keyboardBounds.size.height;
     [UIView commitAnimations];
 }
 
