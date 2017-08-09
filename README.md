@@ -24,5 +24,4 @@ LMFaceKeyBoardView
 [[LMInputViewToolBar shareToolBar] showInputView];
 ```
 
-![Alt Text](https://github.com/LgdMagic/LMInputViewToolBar/blob/master/1.png)
-![Alt Text](https://github.com/LgdMagic/LMInputViewToolBar/blob/master/2.png)
+![Alt Text](https://github.com/LgdMagic/LMInputViewToolBar/blob/master/demo.gif)
