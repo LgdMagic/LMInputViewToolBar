@@ -1,4 +1,4 @@
-T License (MIT)
+The MIT License (MIT)
 
 Copyright (c) 2017 LgdMagic <lgd12636@gmail.com>
 
