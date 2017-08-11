@@ -25,3 +25,9 @@ LMFaceKeyBoardView
 ```
 
 ![Alt Text](https://github.com/LgdMagic/LMInputViewToolBar/blob/master/demo.gif)
+
+
+### License
+
+使用 MIT 许可证，详情见 LICENSE 文件。
+
